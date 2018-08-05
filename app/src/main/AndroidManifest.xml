@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.firstactivity">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="吼叫干扰器"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".FirstActivity"
+            android:label="选择监视模式">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="选择应用程序" />
+        <activity
+            android:name=".UndoActivity"
+            android:label="恢复中心" />
+
+        <service
+            android:name=".KillApp"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+</manifest>
